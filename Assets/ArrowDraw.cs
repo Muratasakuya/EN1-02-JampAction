@@ -19,6 +19,8 @@ public class ArrowDraw : MonoBehaviour
     // クリック座標
     private Vector3 clickPosition;
 
+
+
     /*==========================================================================*/
 
     // Start is called before the first frame update
@@ -36,6 +38,8 @@ public class ArrowDraw : MonoBehaviour
         {
 
             clickPosition = Input.mousePosition;
+
+            arrowImage.gameObject.SetActive(true);
         }
 
         // マウス左クリックを離したとき
@@ -56,8 +60,6 @@ public class ArrowDraw : MonoBehaviour
                 Quaternion.Euler(0.0f, 0.0f, angleRad * Mathf.Rad2Deg);
             // 矢印の画像の大きさをドラッグした距離に合わせる
             arrowImage.rectTransform.sizeDelta = new Vector2(size, size);
-
-            Debug.Log(dist);
         }
     }
 }
