@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class ItemScript : MonoBehaviour
 {
+
+    /*==========================================================================*/
+    /// <summary>
+    /// 変数宣言
+    /// </summary>
+
+
+    private Animator animator;
+
+    /*==========================================================================*/
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        // インスタンスの取得
+        animator = GetComponent<Animator>();
     }
 
     /*==========================================================================*/
@@ -21,8 +34,7 @@ public class ItemScript : MonoBehaviour
 
         Debug.Log("Enter");
 
-        // 衝突したら消滅する
-        DestroySelf();
+        animator.SetTrigger("Get");
     }
     private void OnTriggerStay(Collider other)
     {
