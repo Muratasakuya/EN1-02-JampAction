@@ -27,6 +27,7 @@ public class ArrowDraw : MonoBehaviour
     void Start()
     {
 
+        arrowImage.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -60,6 +61,12 @@ public class ArrowDraw : MonoBehaviour
                 Quaternion.Euler(0.0f, 0.0f, angleRad * Mathf.Rad2Deg);
             // 矢印の画像の大きさをドラッグした距離に合わせる
             arrowImage.rectTransform.sizeDelta = new Vector2(size, size);
+        }
+
+        // マウス左クリックを離したとき
+        if (Input.GetMouseButtonUp(0))
+        {
+            arrowImage.gameObject.SetActive(false);
         }
     }
 }

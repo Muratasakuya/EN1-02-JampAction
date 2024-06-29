@@ -12,6 +12,7 @@ public class ItemScript : MonoBehaviour
 
 
     private Animator animator;
+    private AudioSource audioSource;
 
     /*==========================================================================*/
 
@@ -21,6 +22,7 @@ public class ItemScript : MonoBehaviour
 
         // インスタンスの取得
         animator = GetComponent<Animator>();
+        audioSource = gameObject.GetComponent<AudioSource>();
     }
 
     /*==========================================================================*/
@@ -35,6 +37,7 @@ public class ItemScript : MonoBehaviour
         Debug.Log("Enter");
 
         animator.SetTrigger("Get");
+        audioSource.Play();
     }
     private void OnTriggerStay(Collider other)
     {
